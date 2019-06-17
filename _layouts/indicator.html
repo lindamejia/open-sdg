@@ -41,9 +41,11 @@
       <h2>{{ meta.graph_title | t }}</h2>
     </div>
   </div>
+  
+  {% assign sources=Set([meta.source_organisation_1, meta.source_organisation_2, meta.source_organisation_3, meta.source_organisation_4, meta.source_organisation_5, meta.source_organisation_6 %}
 
   <div class="row" id="indicatorData" data-indicatorid='{{dataset_name}}' data-id="{{meta.indicator | slugify }}" data-country="{{ meta.national_geographical_coverage | t }}"
-  data-charttitle="{{ meta.graph_title | t }}" data-measurementunit="{{ meta.computation_units | t }}" data-datasource="{{ Set([meta.source_organisation_1 | t, meta.source_organisation_2 | t, meta.source_organisation_3 | t, meta.source_organisation_4 | t, meta.source_organisation_5 | t, meta.source_organisation_6 | t]) }}"
+  data-charttitle="{{ meta.graph_title | t }}" data-measurementunit="{{ meta.computation_units | t }}" data-datasource="{{ sources|join:", " }}"
   data-geographicalarea="{{ meta.national_geographical_coverage | t }}" data-footnote="{{ meta.data_footnote | t }}" data-showdata="{{ show_data }}" data-graphtype="{{ meta.graph_type }}"
   data-geocoderegex="{{ meta.data_geocode_regex }}" data-showmap="{{ meta.data_show_map }}" data-startvalues="{{ meta.data_start_values | join: '|' }}">
     {% if show_data %}
