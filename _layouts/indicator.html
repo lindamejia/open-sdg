@@ -42,7 +42,24 @@
     </div>
   </div>
   
-  {% assign sources=[...Set([meta.source_organisation_1, meta.source_organisation_2, meta.source_organisation_3, meta.source_organisation_4, meta.source_organisation_5, meta.source_organisation_6])] %}
+  {% assign n_sources = 0 %}
+  {% for i in (1..12) %}
+    {% assign src_active = "source_active_" | append: i %}
+    {% if meta[src_active] == true %}
+      {% assign n_sources  = n_sources | plus: 1 %}
+    {% endif %}
+  {% endfor %}
+
+  {% assign sources=[] %}
+  {% if n_sources > 0 %}
+    {% for i in (1..n_sources) %}
+      {% assign src_organisation = "source_organisation_" | append: i %}
+      {% if src_organisation not in sources %}
+        {% sources|append: src_organisation %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+  
 
   <div class="row" id="indicatorData" data-indicatorid='{{dataset_name}}' data-id="{{meta.indicator | slugify }}" data-country="{{ meta.national_geographical_coverage | t }}"
   data-charttitle="{{ meta.graph_title | t }}" data-measurementunit="{{ meta.computation_units | t }}" data-datasource="{{ sources|join:", " }}"
