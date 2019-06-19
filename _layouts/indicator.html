@@ -50,7 +50,7 @@
     {% endif %}
   {% endfor %}
 
-  {% assign sources="" %}
+  var sources=""
   {% if n_sources > 0 %}
     {% for i in (1..n_sources) %}
       {% assign src_organisation = "source_organisation_" | append: i %}
