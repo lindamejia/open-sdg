@@ -50,7 +50,7 @@
     {% endif %}
   {% endfor %}
 
-  var sources=""
+  {% with sources="" %}
   {% if n_sources > 0 %}
     {% for i in (1..n_sources) %}
       {% assign src_organisation = "source_organisation_" | append: i %}
@@ -60,7 +60,7 @@
     {% endfor %}
   {% endif %}
   {% sources|slice:":-1" %}
-  
+  {% endwith %}
 
   <div class="row" id="indicatorData" data-indicatorid='{{dataset_name}}' data-id="{{meta.indicator | slugify }}" data-country="{{ meta.national_geographical_coverage | t }}"
   data-charttitle="{{ meta.graph_title | t }}" data-measurementunit="{{ meta.computation_units | t }}" data-datasource="{{ sources }}"
