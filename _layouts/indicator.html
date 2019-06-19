@@ -55,7 +55,7 @@
     {% for i in (1..n_sources) %}
       {% assign src_organisation = "source_organisation_" | append: i %}
       {% if src_organisation not in sources %}
-        {% sources += src_organisation + "," %}
+        sources += {% src_organisation + "," %}
       {% endif %}
     {% endfor %}
   {% endif %}
