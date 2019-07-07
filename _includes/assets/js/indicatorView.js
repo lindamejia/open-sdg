@@ -319,8 +319,11 @@ var indicatorView = function (model, options) {
   };
   
     $("#btn-save").click(function() {
-    html2canvas(document.querySelector("#chart")).then(canvas => {
-      window.open(canvas.toDataURL('image/png'), '_blank');
+      html2canvas($("#chart"), {
+        onrendered: function(canvas) {
+          var img = canvas.toDataURL("image/png");
+          window.open(img);
+        }
     });
   });
 
