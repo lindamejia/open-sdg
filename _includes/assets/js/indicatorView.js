@@ -319,33 +319,41 @@ var indicatorView = function (model, options) {
   };
   
  
-  $("#btn-save").click(function() {
-    html2canvas($("#chart"), {
-      onrendered: function(canvas) {
-        saveAs(canvas.toDataURL(), 'chart.png');
-      }
-    });
-  });
+  //$("#btn-save").click(function() {
+    //html2canvas($("#chart"), {
+      //onrendered: function(canvas) {
+        //saveAs(canvas.toDataURL(), 'chart.png');
+      //}
+    //});
+  //});
 
-  function saveAs(uri, filename) {
-    var link = document.createElement('a');
-    if (typeof link.download === 'string') {
-      link.href = uri;
-      link.download = filename;
+  //function saveAs(uri, filename) {
+    //var link = document.createElement('a');
+    //if (typeof link.download === 'string') {
+      //link.href = uri;
+      //link.download = filename;
 
       //Firefox requires the link to be in the body
-      document.body.appendChild(link);
+      //document.body.appendChild(link);
 
       //simulate click
-      link.click();
+      //link.click();
 
       //remove the link when done
-      document.body.removeChild(link);
-    } else {
-      window.open(uri);
-    }
-  }
-
+      //document.body.removeChild(link);
+    //} else {
+      //window.open(uri);
+    //}
+  //}
+  $(function() {
+    $("#btn-save").click(function() {
+      html2canvas($("#chart"), {
+        onrendered: function(canvas) {
+          Canvas2Image.saveAsPNG(canvas);
+        }
+      });
+    });
+  });
 
   this.createPlot = function (chartInfo) {
 
