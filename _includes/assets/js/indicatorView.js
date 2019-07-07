@@ -320,12 +320,13 @@ var indicatorView = function (model, options) {
   
   
   $(function() {
-    $("#btnSave").click(function() {
+    $("#btn-save").click(function() {
       html2canvas(document.getElementById('chart')).then(function(canvas), {
           var imagedata = canvas.toDataURL('image/png')[1].split(",")[1];
           window.saveAs(imagedata, "chart.png");
-       });  
+      });  
     });
+  });
 
   
 
