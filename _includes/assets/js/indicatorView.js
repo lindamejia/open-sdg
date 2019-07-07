@@ -345,7 +345,6 @@ var indicatorView = function (model, options) {
       window.open(uri);
     }
   }
-});
 
 
   this.createPlot = function (chartInfo) {
