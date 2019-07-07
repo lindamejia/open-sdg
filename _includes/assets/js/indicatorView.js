@@ -321,10 +321,9 @@ var indicatorView = function (model, options) {
   
  
   $("#btn-save").click(function() {
-    html2canvas($("#chart")).then(function(canvas), {
-        var imagedata = canvas.toDataURL('image/png')[1].split(",")[1];
-        window.saveAs(imagedata, "chart.png");
-    });  
+    html2canvas(document.querySelector("#chart")).then(canvas => {
+    Canvas2Image.saveAsPNG(canvas)
+    });
   });
 
   
