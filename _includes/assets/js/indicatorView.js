@@ -320,11 +320,23 @@ var indicatorView = function (model, options) {
   
   
  
-  $("#btn-save").click(function() {
-    html2canvas(document.querySelector("#chart")).then(canvas => {
-    Canvas2Image.saveAsPNG(canvas)
-    });
-  });
+
+  $(function() { 
+    $("#btn-save").click(function() { 
+        html2canvas($("#chart"), {
+            onrendered: function(canvas) {
+                theCanvas = canvas;
+                document.body.appendChild(canvas);
+
+                // Convert and download as image 
+                Canvas2Image.saveAsPNG(canvas); 
+                $("#img-out").append(canvas);
+                // Clean up 
+                //document.body.removeChild(canvas);
+              }
+          });
+      });
+  }); 
 
   
 
