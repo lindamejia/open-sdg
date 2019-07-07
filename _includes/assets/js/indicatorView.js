@@ -318,14 +318,20 @@ var indicatorView = function (model, options) {
     $(this._legendElement).html(view_obj._chartInstance.generateLegend());
   };
   
-    $("#btn-save").click(function() {
-      html2canvas($("#chart"), {
-        onrendered: function(canvas) {
-          var img = canvas.toDataURL("image/png");
-          window.open(img);
-        }
-    });
+  
+  $("#btn-save").click(function(){
+     element_to_png("chart", "htmltocanvasimg");
   });
+
+
+  function element_to_png(srcElementID, targetIMGid){
+      console.log("element_to_png called for element id " + srcElementID);
+      html2canvas($("#"+srcElementID)[0]).then( function (canvas) {
+          var myImage = canvas.toDataURL("image/png");
+          $("#"+targetIMGid).attr("src", myImage);
+		  console.log("html2canvas completed.  png rendered to " + targetIMGid);
+      });
+  }
 
   this.createPlot = function (chartInfo) {
 
