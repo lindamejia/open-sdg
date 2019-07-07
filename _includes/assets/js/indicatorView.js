@@ -319,25 +319,26 @@ var indicatorView = function (model, options) {
   };
   
   
-  $("#btn-save").click(function(){
-     element_to_png("chart", "htmltocanvasimg");
-  });
-
-
-  function element_to_png(srcElementID, targetIMGid){
-      console.log("element_to_png called for element id " + srcElementID);
-      html2canvas($("#"+srcElementID)[0]).then( function (canvas) {
-          console.log(canvas)
-	  saveAs(canvas.toDataURL(), 'file-name.png');
+  $(function() {
+    $("#btnSave").click(function() {
+      html2canvas($("#chart"), {
+        onrendered: function(canvas) {
+          Canvas2Image.saveAsPNG(canvas);
+        }
       });
-  }
-	
-  function saveAs(uri, filename) {
-
-    var link = document.createElement('a');
-
-    if (typeof link.download === 'string') {
-
+    });	
+    
+    $("#btnSave2").click(function() {
+    html2canvas($("#widget"), {
+      onrendered: function(canvas) {
+        saveAs(canvas.toDataURL(), 'canvas.png');
+      }
+    });
+  });	  
+  
+    function saveAs(uri, filename) {
+      var link = document.createElement('a');
+      if (typeof link.download === 'string') {
         link.href = uri;
         link.download = filename;
 
@@ -349,13 +350,13 @@ var indicatorView = function (model, options) {
 
         //remove the link when done
         document.body.removeChild(link);
-
-    } else {
-
+      } else {
         window.open(uri);
-
-        }
+      }
     }
+    });
+
+  
 
   this.createPlot = function (chartInfo) {
 
