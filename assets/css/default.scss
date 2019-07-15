@@ -245,7 +245,7 @@ header {
 }
 
 .col-2 {
-  float: left;
+  float: right;
   padding: 1px;
 }
 	
@@ -330,11 +330,12 @@ header {
     position: relative;
     clear: both;
     float: right;
+    padding: 15px
 
     label {
       position: absolute;
-      top: 8px;
-      left: 7px;
+      top: 25px;
+      left: 20px;
       font-size: 1.25em;
 
       span {
