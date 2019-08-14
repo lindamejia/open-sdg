@@ -1703,6 +1703,14 @@ footer {
 /* example stuff */
 body.contrast-high {
 
+  #page-content {
+    .alert {
+      p, h4 {
+        color: black;
+      }
+    }
+  }
+
   #accessibility-nav {
     li {
       &.contrast-default {
@@ -2047,3 +2055,13 @@ body.contrast-high {
     cursor: pointer;
   }
 }
+
+.data-notice {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.fa-exclamation-circle {
+  font-size: 60px;
+  display: inline-block;
+}	
