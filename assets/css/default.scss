@@ -1654,6 +1654,15 @@ footer {
   }
 }
 
+@media only screen and (min-width: 768px) {
+  #accessibility-nav li .contrast {
+    position: absolute;
+    width: 50px;
+    right: 15px;
+    top: 45px;
+  }
+}
+
 #accessibility-nav {
   padding-top: 20px;
   padding-right: 10px;
@@ -1671,12 +1680,6 @@ footer {
       text-align: center;
       margin: 0.25em;
       margin-top: 0.1em;
-      @media only screen and (min-width: 768px) {
-        position: absolute;
-	width: 50px;
-	right: 15px;
-	top: 45px;
-      }
       a {
         margin: auto;
         text-decoration: none;
