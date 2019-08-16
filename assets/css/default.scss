@@ -267,7 +267,10 @@ header {
 
       &.contrast {
         @media only screen and (max-width: 768px) {
-          display: none;
+          position: absolute;
+	  width: 50px;
+	  right: 15px;
+	  top: 45px;
         }
         font-size: 1em;
         font-weight: bold;
