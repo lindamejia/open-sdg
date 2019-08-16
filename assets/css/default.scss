@@ -2058,12 +2058,18 @@ body.contrast-default{
 	}
 	li.contrast-high{
 		display: block;
+		@media only screen and (max-width: 767px) {
+			width: 60px;
+		}
 	}
 }
 
 body.contrast-high{
 	li.contrast-default{
 		display: block;
+		@media only screen and (max-width: 767px) {
+			width: 60px;
+		}
 	}
 	li.contrast-high{
 		display: none;
