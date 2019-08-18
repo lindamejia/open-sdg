@@ -46,8 +46,8 @@
   {% for i in (1..12) %}
     {% assign src_active = "source_active_" | append: i %}
     {% if meta[src_active] == true %}
-      {% assign source_org = {{ "meta.source_organisation_" | append: i }} %} 
-      {% assign sources_list = sources_list | push: source_org %}
+      {% assign src_org = "source_organisation_" | append: i %} 
+      {% assign sources_list = sources_list | push: meta[src_org] %}
     {% endif %}
   {% endfor %}
   
