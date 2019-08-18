@@ -51,7 +51,7 @@
     {% endif %}
   {% endfor %}
   
-  {% assign uniqSources = sources_list | uniq | join ", " %}
+  {% assign uniqSources = sources_list | uniq | join: ", " %}
   
   <div class="row" id="indicatorData" data-indicatorid='{{dataset_name}}' data-id="{{meta.indicator | slugify }}" data-country="{{ meta.national_geographical_coverage | t }}"
   data-charttitle="{{ meta.graph_title | t }}" data-measurementunit="{{ meta.computation_units | t }}" data-datasource="{{ uniqSources }}"
