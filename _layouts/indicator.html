@@ -42,7 +42,7 @@
     </div>
   </div>
   
-  {% assign sources_list = "{{ meta.source_organisation_1 | t }}, {{ meta.source_organisation_2 | t }}, {{ meta.source_organisation_3 | t }}, {{ meta.source_organisation_4 | t }}, {{ meta.source_organisation_5 | t }}, {{ meta.source_organisation_6 | t }}" | split: ", " %}
+  {% assign sources_list = {{ meta.source_organisation_1 | t }}, {{ meta.source_organisation_2 | t }}, {{ meta.source_organisation_3 | t }}, {{ meta.source_organisation_4 | t }}, {{ meta.source_organisation_5 | t }}, {{ meta.source_organisation_6 | t }} | split: ", " %}
 
   <div class="row" id="indicatorData" data-indicatorid='{{dataset_name}}' data-id="{{meta.indicator | slugify }}" data-country="{{ meta.national_geographical_coverage | t }}"
   data-charttitle="{{ meta.graph_title | t }}" data-measurementunit="{{ meta.computation_units | t }}" data-datasource="{{ sources_list | uniq | join: ", " }}"
