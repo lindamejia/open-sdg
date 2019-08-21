@@ -2063,7 +2063,7 @@ body.long.contrast-high{
 
 body.long {
 	
-  li.contrast {
+  ul.navbar-nav.li.contrast {
     @media only screen and (max-width: 768px) {
       display: none
     }
@@ -2082,7 +2082,7 @@ body.long {
     }
   }
   
-  li.contrast {
+  #accessibility-nav.li.contrast {
     @media screen and (max-width: 500px) {
       font-size: 3vw;
     }
