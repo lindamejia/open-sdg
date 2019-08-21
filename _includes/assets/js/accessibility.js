@@ -74,11 +74,11 @@ var accessibilitySwitcher = function() {
   
   
 function getContrastToggleLabel(identifier){
-  var contrast_type = String({{ site.contrast_type }})
-  if(contrast_type === 'short') { 
+  var contrast_type = "+{{ site.contrast_type }}+"
+  if(contrast_type === "short") { 
     return 'A'
   }
-  else if(contrast_type === 'long') {
+  else if(contrast_type === "long") {
     if(identifier === "default"){	
       return translations.header.default_contrast; 	
     }	
