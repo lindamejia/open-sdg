@@ -74,7 +74,7 @@ var accessibilitySwitcher = function() {
   
   
 function getContrastToggleLabel(identifier){
-  var contrast_type= site.contrast_type
+  var contrast_type = {{ site.contrast_type }}
   if(contrast_type === 'short') { 
     return 'A'
   }
