@@ -3,9 +3,13 @@ var accessibilitySwitcher = function() {
   var contrastIdentifiers = ['default', 'high'];
 
   function setActiveContrast(contrast) {
+    var contrast_type = "{{ site.contrast_type }}"
     _.each(contrastIdentifiers, function(id) {
       $('body').removeClass('contrast-' + id);
     });
+    if(contrast_type === "long"){
+	    $("body").addClass("long");
+    }
     $('body').addClass('contrast-' + contrast);
 
     createCookie("contrast", contrast, 365);
