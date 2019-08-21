@@ -2064,21 +2064,22 @@ body.long.contrast-high{
     ul.navbar-nav {
       li {
         &.contrast {
-        @media only screen and (max-width: 768px) {
-          display: none
-        }
-        font-size: 0.75em;
-        font-weight: bold;
-        border-radius: 5px;
-	width: fit-content;
-        max-width: 150px;
-	height: fit-content;
-        max-height: 50px;
-        text-align: center;
-        margin-left: 1em;
-        a {
-          margin: auto;
-          text-decoration: none;
+          @media only screen and (max-width: 768px) {
+            display: none
+          }
+          font-size: 0.75em;
+          font-weight: bold;
+          border-radius: 5px;
+	  width: fit-content;
+          max-width: 150px;
+	  height: fit-content;
+          max-height: 50px;
+          text-align: center;
+          margin-left: 1em;
+          a {
+            margin: auto;
+            text-decoration: none;
+          }
         }
       }
     }
@@ -2112,6 +2113,5 @@ body.long.contrast-high{
       }
     }
   }
-}
 }
 
