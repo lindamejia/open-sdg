@@ -2059,6 +2059,9 @@ body.long.contrast-high{
   li.contrast-high{
     display: none;
   }
+}
+
+body.long {
 	
   li.contrast {
     @media only screen and (max-width: 768px) {
