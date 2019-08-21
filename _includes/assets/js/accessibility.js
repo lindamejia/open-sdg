@@ -74,16 +74,18 @@ var accessibilitySwitcher = function() {
   
   
 function getContrastToggleLabel(identifier){
-  {%- if site.contrast_type === 'short' -%} 
+  var contrast_type= site.contrast_type
+  if(contrast_type === 'short') { 
     return 'A'
-  {%- elsif site.contrast_type === 'long' -%}
+  }
+  else if(contrast_type === 'long') {
     if(identifier === "default"){	
       return translations.header.default_contrast; 	
     }	
     else if(identifier === "high"){	
       return translations.header.high_contrast;	
     }
-  {%- endif -%}
+  }
 }
 
 function getContrastToggleTitle(identifier){	
