@@ -2036,3 +2036,29 @@ body.contrast-high {
     cursor: pointer;
   }
 }
+
+body.long {
+  body.contrast-default{
+    li.contrast-default{
+      display: none;
+    }
+    li.contrast-high{
+      display: block;
+      @media only screen and (max-width: 767px) {
+	width: 60px;
+      }
+    }
+  }
+
+  body.contrast-high{
+    li.contrast-default{
+      display: block;
+      @media only screen and (max-width: 767px) {
+	width: 60px;
+      }
+    }
+    li.contrast-high{
+      display: none;
+    }
+  }
+}
