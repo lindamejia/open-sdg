@@ -72,14 +72,6 @@ var accessibilitySwitcher = function() {
     })));
   });
   
-  function getContrastText function(contrast) {
-    if (contrast == 'short') {
-      return 'A'
-    }
-    else if (contrast == 'long') {
-      return getContrastToggleLabel(contrast)
-    }
-  }
   
 function getContrastToggleLabel(identifier, contrast_type){
   if (contrast_type == 'short') {
