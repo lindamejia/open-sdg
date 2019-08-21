@@ -274,25 +274,6 @@ header {
           text-decoration: none;
         }
       }
-	    
-      &.contrast-long {
-        @media only screen and (max-width: 768px) {
-          display: none;
-        }
-        font-size: 0.75em;
-        font-weight: bold;
-        border-radius: 5px;
-        width: fit-content;
-	max-width: 150px;
-        height: fit-content;
-        max-height: 50px;
-        text-align: center;
-        margin-left: 1em;
-        a {
-          margin: auto;
-          text-decoration: none;
-        }
-      }
 
       &.contrast-default {
         background: white;
@@ -1256,7 +1237,6 @@ h5 + .btn-download {
     position: absolute;
     top: 12px;
     right: 12px;
-
     a {
       background-color: white;
       border: none;
@@ -1264,7 +1244,6 @@ h5 + .btn-download {
       float: left;
     }
   }
-
   #zoom-in, #zoom-out {
     background-color: black;
     background-repeat: no-repeat;
@@ -1273,11 +1252,9 @@ h5 + .btn-download {
     width: 18px;
     height: 18px;
   }
-
   #zoom-in {
     background-position: 1px 1px;
   }
-
   #zoom-out {
     background-position: 1px -51px;
   }
@@ -1692,28 +1669,6 @@ footer {
         text-decoration: none;
       }
     }
-	 
-    &.contrast-long {
-      @media screen and (max-width: 500px) {
-        font-size: 3vw;
-      }
-      @media screen and (min-width: 501px) {
-        font-size: 1em;
-      }
-      border-radius: 5px;
-      height: fit-content;
-      width: fit-content;
-      max-height: 60px;
-      max-width: 110px;
-      text-align: center;
-      margin: 0.25em;
-      margin-top: 0.1em;
-      a {
-        margin: auto;
-        text-decoration: none;
-	padding: 1px
-      }
-    }
 
     &.contrast-default {
       display: none;
@@ -2080,28 +2035,4 @@ body.contrast-high {
   a {
     cursor: pointer;
   }
-}
-
-body.contrast-default-long{
-	li.contrast-default{
-		display: none;
-	}
-	li.contrast-high{
-		display: block;
-		@media only screen and (max-width: 767px) {
-			width: 60px;
-		}
-	}
-}
-
-body.contrast-high-long{
-	li.contrast-default{
-		display: block;
-		@media only screen and (max-width: 767px) {
-			width: 60px;
-		}
-	}
-	li.contrast-high{
-		display: none;
-	}
 }
