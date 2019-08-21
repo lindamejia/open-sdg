@@ -66,7 +66,7 @@ var accessibilitySwitcher = function() {
       'href': 'javascript:void(0)',
       'title': getContrastToggleTitle(contrast),
       'data-contrast': contrast,
-    }).text(getContrastToggleLabel(contrast}})).click(function() {
+    }).text(getContrastToggleLabel(contrast)).click(function() {
       setActiveContrast($(this).data('contrast'));
       imageFix(contrast);
     })));
