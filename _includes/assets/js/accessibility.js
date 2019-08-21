@@ -66,18 +66,18 @@ var accessibilitySwitcher = function() {
       'href': 'javascript:void(0)',
       'title': getContrastToggleTitle(contrast),
       'data-contrast': contrast,
-    }).text(getContrastToggleLabel(contrast, {{ site.contrast_type }})).click(function() {
+    }).text(getContrastToggleLabel(contrast}})).click(function() {
       setActiveContrast($(this).data('contrast'));
       imageFix(contrast);
     })));
   });
   
   
-function getContrastToggleLabel(identifier, contrast_type){
-  if (contrast_type === "short") {
+function getContrastToggleLabel(identifier){
+  if ({{ site.contrast_type }} === "short") {
     return 'A'
   }
-  else if (contrast_type === "long") {
+  else if ({{ site.contrast_type }} === "long") {
     if(identifier === "default"){	
       return translations.header.default_contrast; 	
     }	
