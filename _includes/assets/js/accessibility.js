@@ -3,11 +3,11 @@ var accessibilitySwitcher = function() {
   var contrastIdentifiers = ['default', 'high'];
 
   function setActiveContrast(contrast) {
-    var contrast_type = "{{ site.contrast_type }}"
+    var contrastType = "{{ site.contrast_type }}"
     _.each(contrastIdentifiers, function(id) {
       $('body').removeClass('contrast-' + id);
     });
-    if(contrast_type === "long"){
+    if(contrastType === "long"){
 	    $("body").addClass("long");
     }
     $('body').addClass('contrast-' + contrast);
@@ -78,8 +78,8 @@ var accessibilitySwitcher = function() {
   
   
 function getContrastToggleLabel(identifier){
-  var contrast_type = "{{ site.contrast_type }}"
-  if(contrast_type === "long") {
+  var contrastType = "{{ site.contrast_type }}"
+  if(contrastType === "long") {
     if(identifier === "default"){	
       return translations.header.default_contrast; 	
     }	
