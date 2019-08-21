@@ -67,18 +67,18 @@ var accessibilitySwitcher = function() {
       'href': 'javascript:void(0)',
       'title': getContrastToggleTitle(contrast),
       'data-contrast': contrast,
-    }).text(getContrastText()).click(function() {
+    }).text(getContrastText(site.contrast_type)).click(function() {
       setActiveContrast($(this).data('contrast'));
       imageFix(contrast);
     })));
   });
   
-  function getContrastText function() {
-    if (site.contrast_type == 'short') {
-      return contrastText='A'
+  function getContrastText function(contrast) {
+    if (contrast == 'short') {
+      return 'A'
     }
-    else if (site.contrast_type == 'long') {
-      return contrastText=getContrastToggleLabel(contrast)
+    else if (contrast == 'long') {
+      return getContrastToggleLabel(contrast)
     }
   }
   
