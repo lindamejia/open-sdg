@@ -70,7 +70,7 @@ var accessibilitySwitcher = function() {
       'href': 'javascript:void(0)',
       'title': 'Set to ' + contrast + ' contrast',
       'data-contrast': contrast,
-    }).text(getContrastToggleLabel(contrast).replace(" ", "<br/>")).click(function() {
+    }).text(getContrastToggleLabel(contrast)).click(function() {
       setActiveContrast($(this).data('contrast'));
       imageFix(contrast);
     })));
@@ -93,10 +93,10 @@ function getContrastToggleLabel(identifier){
 
 function getContrastToggleTitle(identifier){	
   if(identifier === "default"){	
-    return translations.header.disable_high_contrast; 	
+    return translations.header.disable_high_contrast.replace(" ", "<br/>"); 	
   }	
   else if(identifier === "high"){	
-    return translations.header.enable_high_contrast;	
+    return translations.header.enable_high_contrast.replace(" ", "<br/>");	
   }	
 }
   
